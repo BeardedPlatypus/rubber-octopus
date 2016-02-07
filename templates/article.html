@@ -12,6 +12,7 @@
                             {% block title %}{{ article.title }}{% endblock %}
                         </h1>
                     </a>
+                    {% block meta %}
                     <div class="article-meta">
                         <span class="article-meta-date">
                             <time class="published" datetime="{{ article.date.isoformat() }}"> {{ article.locale_date }} </time>
@@ -25,19 +26,13 @@
                             {% endfor %}
                         </span>
                     </div>
+                    {% endblock %}
+                    {% block article_content %}
                     <div class="article-body">
                         <p>{{ article.content }}</p>
                     </div>
-                    <div class="article-divider">
-                        <div class="article-divider-line">
-                        </div>
-                        <div class="article-divider-icon">
-                            <span class="fa-stack fa-lg">
-                                <i class="fa fa-circle fa-stack-2x"></i>
-                                <i class="fa fa-coffee fa-stack-1x fa-inverse"></i>
-                            </span>
-                        </div>
-                    </div>
+                    {% endblock %}
+                    {% include 'elements/article_divider.html' %}
                 </article>
             </div>
         </div>

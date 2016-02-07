@@ -29,16 +29,7 @@
                     <div class="article-summary">
                         <p>{{ article.summary }}</p>
                     </div>
-                    <div class="article-divider">
-                        <div class="article-divider-line">
-                        </div>
-                        <div class="article-divider-icon">
-                            <span class="fa-stack fa-lg">
-                                <i class="fa fa-circle fa-stack-2x"></i>
-                                <i class="fa fa-coffee fa-stack-1x fa-inverse"></i>
-                            </span>
-                        </div>
-                    </div>
+                    {% include 'elements/article_divider.html' %}
                 </article>
                 {% endfor %}
             </div>
