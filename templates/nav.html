@@ -1,41 +1,35 @@
 {# Navigation #}
-<nav id="site-navigation" class="navbar navbar-inverse"  role="navigation">
+{% macro render(brand="Monthy's Blog", link="#") -%}
+<nav id="site-navigation" class="navbar navbar-inverse" role="navigation">
     <div class="container" >
         <div class="navbar-header full-width" >
-            <button type="button"  class="navbar-toggle"  data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" >
+            <button type="button"
+                    class="navbar-toggle"
+                    data-toggle="collapse"
+                    data-target="#blog-navbar">
                 <span class="sr-only" >Toggle navigation </span>
                 <span class="icon-bar" ></span>
                 <span class="icon-bar" ></span>
                 <span class="icon-bar" ></span>
             </button>
-            <a class="navbar-brand"  href="{{ SITEURL }}/index.html">Monthy's Blog</a>
+
+            <a class="navbar-brand"
+               href="{{ link }}">
+                {{ brand }}
+            </a>
         </div>
-    </div>
-    <div class="container">
+
         {% if DISPLAY_PAGES_ON_MENU %}
-        {# Collect the nav links forms and other content for toggling #}
-        <div class="collapse navbar-collapse"  id="bs-example-navbar-collapse-1" >
+        <div class="collapse navbar-collapse" id="#blog-navbar">
             <ul class="nav navbar-nav">
-                <li{% if 'index' == page %} class="active" {% endif %}>
-                    <a href="{{ SITEURL }}/index.html">
-                        {#
-                        <span class="fa-stack fa-lg">
-                            <i class="fa fa-circle fa-stack-2x"></i>
-                            <i class="fa fa-home fa-stack-1x fa-inverse"></i>
-                        </span>
-                        #}
+                <li {%if 'index' == page %} class="active" {% endif %}>
+                    <a href="{{ SITEURL }}/index.html" >
                         Blog
                     </a>
                 </li>
                 {% for p in pages %}
-                <li{% if p == page %} class="active"{% endif %}>
+                <li {%if 'index' == page %} class="active" {% endif %}>
                     <a href="{{ SITEURL }}/{{ p.url }}">
-                        {#
-                        <span class="fa-stack fa-lg">
-                            <i class="fa fa-circle fa-stack-2x"></i>
-                            <i class="fa {{ p.icon }} fa-stack-1x fa-inverse"></i>
-                        </span>
-                        #}
                         {{ p.title }}
                     </a>
                 </li>
@@ -45,3 +39,4 @@
         {% endif %}
     </div>
 </nav>
+{%- endmacro %}

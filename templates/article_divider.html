@@ -1,0 +1,24 @@
+<div class="article-divider">
+    <div class="article-divider-line">
+    </div>
+    <div class="article-divider-icon">
+        <span class="fa-stack fa-lg">
+            <i class="fa fa-circle fa-stack-2x"></i>
+            {% if article.type == 'code' %}
+            <i class="fa fa-code fa-stack-1x fa-inverse"></i>
+            {% elif article.type == 'science' %}
+            <i class="fa fa-flask fa-stack-1x fa-inverse"></i>
+            {% elif article.type == 'art' %}
+            <i class="fa fa-pencil fa-stack-1x fa-inverse"></i>
+            {% elif article.type == 'electronics' %}
+            <i class="fa fa-plug fa-stack-1x fa-inverse"></i>
+            {% elif article.type == 'food' %}
+            <i class="fa fa-cutlery fa-stack-1x fa-inverse"></i>
+            {% elif article.type == 'misc' %}
+            <i class="fa fa-coffee fa-stack-1x fa-inverse"></i>
+            {% else %}
+            <i class="fa fa-magic fa-stack-1x fa-inverse"></i>
+            {% endif %}
+        </span>
+    </div>
+</div>

@@ -1,31 +1,22 @@
 {# Footer #}
 <div class="container">
-    {# TODO: replace these by dynamic generation #}
-    <ul class="footer-social-media">
+    {% if SOCIAL %}
+    <ul class="footer-social-media" >
+        {% for name, url in SOCIAL %}
         <li>
-            <a href="https://www.linkedin.com/in/maartentegelaers">
+            <a href="{{ url }}">
                 <span class="fa-stack fa-lg">
                     <i class="fa fa-circle fa-stack-2x"></i>
-                    <i class="fa fa-linkedin fa-stack-1x fa-inverse"></i>
-                </span>
-            </a>
-        </li>
-        <li>
-            <a href="https://github.com/BeardedPlatypus">
-                <span class="fa-stack fa-lg">
-                    <i class="fa fa-circle fa-stack-2x"></i>
-                    <i class="fa fa-github-alt fa-stack-1x fa-inverse"></i>
-                </span>
-            </a>
-        </li>
-        <li>
-            <a href="https://www.youtube.com/user/Month3d">
-                <span class="fa-stack fa-lg">
-                    <i class="fa fa-circle fa-stack-2x"></i>
+                    {% if name == 'youtube' %}
                     <i class="fa fa-youtube-play fa-stack-1x fa-inverse"></i>
+                    {% else %}
+                    <i class="fa fa-{{ name }} fa-stack-1x fa-inverse"></i>
+                    {% endif %}
                 </span>
             </a>
         </li>
+        {% endfor %}
     </ul>
-    <p class="copyright-notice">Copyright © Maarten Tegelaers 2016</p>
+    {% endif %}
+    <p class="copyright-notice">Copyright © {{ COPYRIGHT }}</p>
 </div>

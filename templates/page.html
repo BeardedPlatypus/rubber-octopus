@@ -1,17 +1,7 @@
 {% extends "base.html" %}
+{% block nav %}
+{{ navigation.render(brand=page.title, link=page.link) }}
+{% endblock %}
+
 {% block content %}
-<div class="container">
-    <div class="row">
-        <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-            <section class="page">
-                <h1 class="page-title">
-                    {{ page.title }}
-                </h1>
-                <div class="page-body">
-                    {{ page.content }}
-                </div>
-            </section>
-        </div>
-    </div>
-</div>
 {% endblock %}
