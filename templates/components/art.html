@@ -1,0 +1,85 @@
+{#-- Article Macros --#}
+{% import 'components/divider.html' as divider %}
+
+
+{%- macro render(article,
+                 preview=False) %}
+<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12
+            ro-article">
+    {#-- Header --#}
+    <div class="row
+                ro-article-header">
+        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12" >
+            {#-- Date  --#}
+            <div class="row
+                        ro-article-meta
+                        ro-meta-text" >
+                <span>
+                    <time class="published"
+                          datetime="{{article.locale_date }}" >
+                        {{ article.locale_date }}
+                    </time>
+                </span>
+            </div>
+
+            {#-- Title --#}
+            <div class="row
+                        ro-article-title">
+                <a href="{{ SITEURL }}/{{ article.url }}">
+                    <h1 class="ro-title-text">
+                        {{ article.title }}
+                    </h1>
+                </a>
+            </div>
+
+            {#-- Tags|Categories --#}
+            <div class="row
+                        ro-article-meta
+                        ro-meta-text" >
+                <span>
+                    Category: 
+                    <a href="{{ SITEURL }}/category/{{ article.category }}.html">
+                        {{ article.category }}
+                    </a>
+                </span>
+                <span class="ro-meta-tags">
+                    Tags: 
+                    {% for tag in article.tags %}
+                    <a href="{{ SITEURL }}/tags/{{ tag }}.html">{{ tag }}</a>
+                    {% endfor %}
+                    </a>
+                </span>
+            </div>
+        </div>
+    </div>
+
+    {#-- Content --#}
+    <div class="row
+                ro-article-body">
+        <div class="ro-summary-text
+                    ro-article-summary">
+            <p>
+                {{ article.summary }}
+            </p>
+        </div>
+        {% if preview %}
+        <p>
+            <a href="{{ article.url }}">Read more</a>
+        </p>
+        {% else %}
+        <div class="ro-article-content
+                    ro-body-text">
+            <p>
+                {{ article.content }}
+            </p>
+        </div>
+        {% endif %}
+    </div>
+
+    {#-- Divider --#}
+    <div class="row
+                ro-divider-container">
+        {{ divider.article(article.type) }}
+    </div>
+</div>
+{%- endmacro %}

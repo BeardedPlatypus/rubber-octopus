@@ -1,0 +1,30 @@
+{# Category #}
+{% extends "base.html" %}
+
+{% import 'components/art.html' as art %}
+
+{% block nav %}
+{{ navigation.render(brand=("Categories"), link="#") }}
+{% endblock %}
+
+{% block content %}
+{% block content_title %}
+{% endblock %}
+
+<div class="container" >
+    <div class="row">
+        <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1" >
+            {% for cat in categories %}
+            <div class="row
+                        ro-categories-element">
+                <a href="{{ cat[0].url }}">
+                    <h1 class="ro-title-text">
+                        {{ cat[0] }}
+                    </h1>
+                </a>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</div>
+{% endblock content %}

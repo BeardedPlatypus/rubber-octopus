@@ -8,11 +8,18 @@ $grey3: #404752;
 $grey4: #4A535E;
 $grey5: #BED4F2;
 
+$grey_header: #323840;
+$grey_divider: #6B6F7A;
+
+
+// -----------------------------------------------------------------------------
 // Fonts
+// -----------------------------------------------------------------------------
 @mixin source-sans-pro($weight) {
     font-family: 'Source Sans Pro', sans-serif;
     font-weight: $weight;
 }
+
 
 // -----------------------------------------------------------------------------
 // Elements
@@ -30,11 +37,13 @@ body {
     margin-bottom: 5em;
 }
 
+
+// -----------------------------------------------------------------------------
 // Navigation
 #banner {
-    background: $grey2;
-    padding: 4.0em 0em 1.0em 0em;
-    positiion: relative;
+    background: $grey_header;
+    padding: 1.5em 0em 1.0em 0em;
+    position: relative;
     z-index: 2;
 }
 
@@ -43,8 +52,8 @@ body {
 }
 
 .navbar-inverse {
-    background: $grey2;
-    border-color: $grey2;
+    background: $grey_header;
+    border-color: $grey_header;
 }
 
 .navbar-nav {
@@ -72,7 +81,7 @@ body {
     text-align: center;
 
     @include source-sans-pro(700);
-    font-size: 2.6em;
+    font-size: 2.0em;
     color: white;
     text-transform: uppercase;
 }
@@ -91,98 +100,8 @@ body {
     width: 100%
 }
 
-// Article
-.article {
-    
-}
 
-.article-title {
-    color: $grey2;
-    @include source-sans-pro(700);
-    font-size: 2.0em;
-    text-align: left;
-}
-
-.article-meta {
-    color: $grey2;
-    @include source-sans-pro(300);
-
-    padding-right: 3em;
-    margin-top: 0.5em;
-    text-align: left;
-
-    > span {
-        display: inline-block;
-        border-left: 1px solid $grey3;
-        padding-left: 0.5em;
-        padding-right: 0.5em;
-    }
-
-
-}
-
-.article-meta-date {
-    border-left: 0px solid $grey3 !important;
-    padding-left: 0px !important;
-}
-
-.article-meta-category {
-    
-}
-
-.article-meta-tags {
-    
-}
-
-.article-summary {
-    color: $grey2;
-    @include source-sans-pro(400);
-    text-align: left;
-    margin-bottom: 2.2em;
-}
-
-.article-body {
-    color: $grey2;
-    @include source-sans-pro(400);
-    text-align: left;
-    margin-bottom: 2.2em;
-}
-
-.article-divider {
-    
-}
-
-.article-divider-line {
-    width: 100%;
-    border-bottom: 1px solid #6B6F7A;
-}
-
-.article-divider-icon {
-    color: #6B6F7A;
-    position: relative;
-    display: block;
-    font-size: 0.8em;
-    margin-top: -1.3em;
-}
-
-.page {
-    
-}
-
-.page-title {
-    color: $grey2;
-    @include source-sans-pro(700);
-    font-size: 2.5em;
-    text-align: left;
-}
-
-.page-body {
-    color: $grey2;
-    @include source-sans-pro(400);
-    text-align: left;
-    margin-bottom: 2.2em;
-}
-
+// -----------------------------------------------------------------------------
 // Footer
 .copyright-notice {
     @include source-sans-pro(300);
@@ -212,3 +131,138 @@ body {
     width: 100%;
     height: 5em;
 }
+
+// -----------------------------------------------------------------------------
+// Generic elements
+.ro {
+    
+}
+
+.ro-body {
+    padding-bottom: 7.5em;    
+}
+
+.ro-title-text {
+    color: $grey2;
+    @include source-sans-pro(700);
+    font-size: 2.0em;
+}
+
+.ro-meta-text {
+    color: $grey3;
+    @include source-sans-pro(300);
+    font-size: 1em;
+}
+
+.ro-summary-text {
+    color: $grey2;
+    @include source-sans-pro(700);
+}
+
+.ro-body-text {
+    color: $grey2;
+    @include source-sans-pro(400);
+}
+
+
+// -----------------------------------------------------------------------------
+// Divider
+.ro-divider {
+    
+}
+
+.ro-divider-container {
+    padding-top: 1em;
+    padding-bottom: 0.2em;    
+}
+
+.ro-divider-line {
+    width: 100%;
+    border-bottom: 1px solid $grey_divider;
+}
+
+.ro-divider-icon {
+    color: #6B6F7A;
+    position: relative;
+    display: block;
+    font-size: 0.8em;
+    margin-top: -1.3em;
+    text-align: center;
+}
+
+// -----------------------------------------------------------------------------
+// Article
+.ro-article {
+    
+}
+
+.ro-article-header {
+    margin-top: 2.2em;
+    margin-bottom: 1.2em;
+}
+
+.ro-article-meta {
+    text-align: left;
+    
+}
+
+.ro-article-title {
+    text-align: left;
+    margin-top: -1.0em;
+}
+
+.ro-meta-tags {
+    padding-left: 0.8em;
+}
+
+.ro-article-body {
+    text-align: left;
+    padding-bottom: 0.8em;
+}
+
+.ro-article-summary {
+    padding-bottom: 0.5em;
+}
+
+.ro-article-content {
+    
+}
+
+// -----------------------------------------------------------------------------
+// Category / Categories
+.ro-categories {
+    
+}
+
+.ro-categories-element {
+    text-align: left;
+    margin-top: 1.0em;
+}
+
+// -----------------------------------------------------------------------------
+// Page
+.page {
+    
+}
+
+.page-title {
+    color: $grey2;
+    @include source-sans-pro(700);
+    font-size: 2.5em;
+    text-align: left;
+}
+
+.page-body {
+    color: $grey2;
+    @include source-sans-pro(400);
+    text-align: left;
+    margin-bottom: 2.2em;
+}
+
+
+// -----------------------------------------------------------------------------
+// About Me
+
+// -----------------------------------------------------------------------------
+// Portfolio
+

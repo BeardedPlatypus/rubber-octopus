@@ -1,0 +1,31 @@
+{# Tags #}
+{% extends "base.html" %}
+
+{% import 'components/art.html' as art %}
+
+{% block nav %}
+{{ navigation.render(brand=("Tags"), link="#") }}
+{% endblock %}
+
+{% block content %}
+
+{% block content_title %}
+<div class="container" >
+    <div class="row">
+        <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1" >
+            {% for tag in tag_cloud %}
+            <div class="row
+                        ro-categories-element">
+                <a href="{{ tag[0].url }}">
+                    <h1 class="ro-title-text">
+                        {{ tag[0] }}
+                    </h1>
+                </a>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% endblock content %}

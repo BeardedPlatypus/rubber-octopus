@@ -1,44 +1,14 @@
+{# Article #}
 {% extends "base.html" %}
+
+{% import 'components/art.html' as art %}
+
 {% block content %}
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-                <article class="article">
-                    {% if article.description %}
-                    <meta name="description" content="{{article.description}}" />
-                    {% endif %}
-                    <a href="{{ SITEURL }}/{{ article.url }}">
-                        <h1 class="article-title">
-                            {% block title %}{{ article.title }}{% endblock %}
-                        </h1>
-                    </a>
-
-                    <div class="article-meta">
-                        <span class="article-meta-date">
-                            <time class="published"
-                                  datetime="{{ article.date.isoformat() }}">
-                                {{ article.locale_date }}
-                            </time>
-                        </span>
-
-                        <span class="article-meta-category">
-                            <a href="{{ SITEURL }}/category/{{ article.category }}.html">
-                                {{ article.category }}
-                            </a>
-                        </span>
-
-                        <span class="article-meta-tags">
-                            {% for tag in article.tags %}
-                            <a href="{{ SITEURL }}/tags/{{ tag }}.html">{{ tag }}</a>
-                            {% endfor %}
-                        </span>
-                    </div>
-                    <div class="article-body">
-                        <p>{{ article.content }}</p>
-                    </div>
-                    {% include 'article_divider.html' %}
-                </article>
-            </div>
+<div class="container" >
+    <div class="row" >
+        <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+            {{ art.render(article, preview=False) }}
         </div>
     </div>
+</div>
 {% endblock %}

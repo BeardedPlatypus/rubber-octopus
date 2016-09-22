@@ -1,7 +1,11 @@
-{# Index #}
+{# Category #}
 {% extends "base.html" %}
 
 {% import 'components/art.html' as art %}
+
+{% block nav %}
+{{ navigation.render(brand=("Category: {}".format(category)), link="#") }}
+{% endblock %}
 
 {% block content %}
 
@@ -11,7 +15,7 @@
 {# Article list #}
 <div class="container" >
     <div class="row">
-        <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1" >
             {% for article in articles_page.object_list %}
             {{ art.render(article, preview=True) }}
             {% endfor %}
@@ -24,5 +28,3 @@
 {% include 'pagination.html' %}
 {% endif %}
 {% endblock content %}
-
-

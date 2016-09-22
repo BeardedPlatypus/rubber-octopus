@@ -1,0 +1,32 @@
+{#-- Divider --#}
+{% macro render(icon) -%}
+<div class="ro-divider">
+    <div class="ro-divider-line">
+    </div>
+    <div class="ro-divider-icon">
+        <span class="fa-stack fa-lg">
+            <i class="fa fa-circle fa-stack-2x"></i>
+            <i class="{{ icon }}"></i>
+        </span>
+    </div>
+</div>
+{%- endmacro %}
+
+
+{% macro article(article_type) -%}
+{% if article_type == 'code' %}
+    {{ render(icon="fa fa-code fa-stack-1x fa-inverse") }}
+{% elif article_type == 'science' %}
+    {{ render(icon="fa fa-flask fa-stack-1x fa-inverse") }}
+{% elif article_type == 'art' %}
+    {{ render(icon="fa fa-pencil fa-stack-1x fa-inverse") }}
+{% elif article_type == 'electronics' %}
+    {{ render(icon="fa fa-plug fa-stack-1x fa-inverse") }}
+{% elif article_type == 'food' %}
+    {{ render(icon="fa fa-cutlery fa-stack-1x fa-inverse") }}
+{% elif article_type == 'misc' %}
+    {{ render(icon="fa fa-coffee fa-stack-1x fa-inverse") }}
+{% else %}
+    {{ render(icon="fa fa-magic fa-stack-1x fa-inverse") }}
+{% endif %}
+{%- endmacro %}
