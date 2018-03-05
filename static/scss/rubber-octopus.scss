@@ -1,0 +1,313 @@
+// -----------------------------------------------------------------------------
+//  Variables
+// -----------------------------------------------------------------------------
+// Colours
+$grey1: #181A1E;
+$grey2: #282D33;
+$grey3: #404752;
+$grey4: #4A535E;
+$grey5: #BED4F2;
+
+$grey_header: #cccccc; //#323840;
+$grey_header_divider: #6b6f7a;
+$grey_divider: #6B6F7A;
+
+
+// -----------------------------------------------------------------------------
+// Fonts
+// -----------------------------------------------------------------------------
+@mixin source-sans-pro($weight) {
+    font-family: 'Source Sans Pro', sans-serif;
+    font-weight: $weight;
+}
+
+
+// -----------------------------------------------------------------------------
+// Elements
+// -----------------------------------------------------------------------------
+// Main
+html {
+    position: relative;
+    min-height: 100%;
+}
+
+body {
+    color: #000000;
+    background-color: #ffffff;
+
+    margin-bottom: 5em;
+}
+
+h1 {
+    font-size: 2.0em;
+}
+
+h2 {
+    font-size: 1.5em;
+}
+
+h3 {
+    font-size: 1.25em;
+}
+
+
+// -----------------------------------------------------------------------------
+// Navigation
+#banner {
+    background: $grey_header;
+    padding: 1.5em 0em 0.25em 0em;
+    position: relative;
+    z-index: 2;
+    border-bottom: 1px solid $grey_header_divider;
+    //background-repeat: no-repeat;
+    //background-color: $grey_header;
+    //background-image: url("https://imgur.com/3gezmwZ.png");
+    //background-size: auto 80%;
+    //background-position: calc(50% - 185px) 60%;
+}
+
+.navbar {
+    //background: $grey_header;
+    //border-color: $grey_header;
+    margin-bottom: 0px;
+}
+
+.navbar-inverse {
+    background: $grey_header;
+    border-color: $grey_header;
+}
+
+.navbar-nav {
+    text-align: center;
+    width: 100%;
+    > li {
+        float: none;
+        display: inline-block;
+        padding-left: 12px;
+        padding-right: 12px;
+        > a {
+            padding: 20px 0px 10px 0px;
+            @include source-sans-pro(700);
+            color: #000000; //white;
+            font-size: 1.25em;
+        }
+    }
+}
+
+.navbar-inverse .navbar-nav>li>a {
+    color: #000000;//white;
+}
+
+.navbar-brand {
+    width: 100%;
+    text-align: center;
+
+    @include source-sans-pro(700);
+    font-size: 2.0em;
+    //color: white;
+    color: #000000;
+    text-transform: uppercase;
+}
+
+.navbar-logo img {
+    line-height: 0;
+    display: block;
+    width: auto;
+    max-height:220px;
+    margin: 0 auto;
+    padding-bottom:10px;
+    padding-right:30px;
+}
+
+.navbar-inverse .navbar-brand {
+    color: white;
+}
+
+@media (min-width:768px){
+  .navbar > .container .navbar-brand,
+  .navbar > .container-fluid .navbar-brand {
+    margin-left: 0px;
+  }
+}
+
+.full-width {
+    width: 100%
+}
+
+
+// -----------------------------------------------------------------------------
+// Footer
+.copyright-notice {
+    @include source-sans-pro(300);
+    color: $grey2;
+    text-align: center;
+}
+
+.footer-social-media {
+    text-align: center;
+    width: 100%;
+    padding-left: 0;
+    > li {
+        float: none;
+        display: inline-block;
+        padding-left: 6px;
+        padding-right: 6px;
+        > a {
+            padding: 0px 0px;
+            color: $grey2;
+        }
+    }
+}
+
+.sticky-footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 5em;
+}
+
+.icon-white {
+    color: white;
+}
+
+// -----------------------------------------------------------------------------
+// Generic elements
+.ro {
+    
+}
+
+.ro-body {
+    padding-bottom: 7.5em;    
+}
+
+.ro-title-text {
+    color: $grey2;
+    @include source-sans-pro(700);
+    font-size: 2.0em;
+}
+
+.ro-meta-text {
+    color: $grey3;
+    @include source-sans-pro(300);
+    font-size: 1em;
+}
+
+.ro-summary-text {
+    color: $grey2;
+    @include source-sans-pro(700);
+}
+
+.ro-body-text {
+    color: $grey2;
+    @include source-sans-pro(400);
+}
+
+
+// -----------------------------------------------------------------------------
+// Divider
+.ro-divider {
+    width: 100%;    
+}
+
+.ro-divider-container {
+    padding-top: 1em;
+    padding-bottom: 0.2em;    
+}
+
+.ro-divider-line {
+    width: 100%;
+    border-bottom: 1px solid $grey_divider;
+}
+
+.ro-divider-icon {
+    color: #6B6F7A;
+    position: relative;
+    display: block;
+    font-size: 0.8em;
+    margin-top: -1.3em;
+    text-align: center;
+}
+
+// -----------------------------------------------------------------------------
+// Article
+.ro-article {
+    
+}
+
+.ro-article-header {
+    margin-top: 1.1em;
+    margin-bottom: 1.2em;
+}
+
+.ro-article-meta {
+    text-align: left;
+}
+
+.ro-article-date {
+    padding-bottom: 1.25em;
+}
+
+.ro-article-categorisation {
+    //padding-top: 1.25em;
+}
+
+.ro-article-title {
+    text-align: left;
+    margin-top: -1.0em;
+}
+
+.ro-meta-tags {
+    padding-left: 0.8em;
+}
+
+.ro-article-body {
+    text-align: left;
+    padding-bottom: 0.2em;
+}
+
+.ro-article-summary {
+    padding-bottom: 0.5em;
+}
+
+.ro-article-content {
+    
+}
+
+// -----------------------------------------------------------------------------
+// Category / Categories
+.ro-categories {
+    
+}
+
+.ro-categories-element {
+    text-align: left;
+    margin-top: 1.0em;
+}
+
+// -----------------------------------------------------------------------------
+// Page
+.page {
+    
+}
+
+.page-title {
+    color: $grey2;
+    @include source-sans-pro(700);
+    font-size: 2.5em;
+    text-align: left;
+}
+
+.page-body {
+    color: $grey2;
+    @include source-sans-pro(400);
+    text-align: left;
+    margin-bottom: 2.2em;
+}
+
+
+// -----------------------------------------------------------------------------
+// About Me
+
+// -----------------------------------------------------------------------------
+// Portfolio
+
