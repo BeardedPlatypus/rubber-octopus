@@ -5,12 +5,12 @@
         {% for name, url in SOCIAL %}
         <li>
             <a href="{{ url }}">
-                <span class="fa-stack fa-lg">
-                    <i class="fa fa-circle fa-stack-2x"></i>
-                    {% if name == 'youtube' %}
-                    <i class="fa fa-youtube-play fa-stack-1x fa-inverse"></i>
+                <span class="fa-layers fa-fw fa-3x">
+                    <i class="fas fa-circle"></i>
+                    {% if name == 'linkedin' %}
+                    <i class="fa-inverse fab fa-linkedin-in" data-fa-transform="shrink-5"></i>
                     {% else %}
-                    <i class="fa fa-{{ name }} fa-stack-1x fa-inverse"></i>
+                    <i class="fa-inverse fab fa-{{ name }}" data-fa-transform="shrink-5"></i>
                     {% endif %}
                 </span>
             </a>

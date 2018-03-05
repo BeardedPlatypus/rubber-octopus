@@ -4,15 +4,15 @@
 
 {%- macro render(article,
                  preview=False) %}
-<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12
-            ro-article">
+<div class="col-12 ro-article">
     {#-- Header --#}
     <div class="row
                 ro-article-header">
-        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12" >
+        <div class="col-12" >
             {#-- Date  --#}
             <div class="row
                         ro-article-meta
+                        ro-article-date
                         ro-meta-text" >
                 <span>
                     <time class="published"
@@ -35,6 +35,7 @@
             {#-- Tags|Categories --#}
             <div class="row
                         ro-article-meta
+                        ro-article-categorisation
                         ro-meta-text" >
                 <span>
                     Category: 
@@ -56,13 +57,13 @@
     {#-- Content --#}
     <div class="row
                 ro-article-body">
+        {% if preview %}
         <div class="ro-summary-text
                     ro-article-summary">
             <p>
                 {{ article.summary }}
             </p>
         </div>
-        {% if preview %}
         <p>
             <a href="{{ article.url }}">Read more</a>
         </p>

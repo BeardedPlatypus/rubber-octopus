@@ -8,22 +8,10 @@
     <title>{% block title %}{{ SITENAME }}{% endblock title %}</title>
 
     {# ---------------------------------------------------------------------- #}
-    {# CSS definitions #}
-    <link rel="stylesheet"
-          href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
-          integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
-          crossorigin="anonymous">
-    <link rel="stylesheet"
-          href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
-    {#
-    <link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,300,700'
-          rel='stylesheet'
-          type='text/css'>
-    #}
-    <link href="https://fonts.googleapis.com/css?family=Roboto+Slab:700|Roboto:300,400"
-          rel="stylesheet">
-    <link rel="stylesheet"
-          href="{% if page or tag or tags %}../{% endif %}theme/css/rubber-octopus.css"  >
+    {# Style Sheets #}
+    {% include 'components/stylesheets.html' %}
+
+
 </head>
 
 <body>
@@ -40,7 +28,7 @@
 
     {# ---------------------------------------------------------------------- #}
     {# Body #}
-    <div class="col-lg-12">
+    <div class="col-12">
         <section class="ro-body body"
                  id="content">
             {% block content %}
@@ -56,12 +44,6 @@
 
     {# ---------------------------------------------------------------------- #}
     {# JS definitions #}
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js">
-    </script>
-
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
-            integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
-            crossorigin="anonymous">
-    </script>
+    {% include 'components/scripts.html' %}
 </body>
 </html>
